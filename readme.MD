@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">  
-  <img src="./web/src/assets/logo.svg" alt="" width="550" height="99" />
+  <img src="./frontend/src/assets/logo.svg" alt="" width="550" height="99" />
   <h1>food explorer</h1>  
 </div>
 
@@ -58,7 +58,7 @@ ___
 Clone o projeto para o local desejado em seu computador.
 
 ```bash
-$ git clone git@github.com:andreviapiana/Food-Explorer.git
+$ git clone https://github.com/brunocasula/food-explorer.git
 ```
 ___
 
@@ -118,4 +118,4 @@ Se você está tentando acessar o site e o BackEnd não responde, apenas aguarde
 <br>
 Esta etapa poderá demorar até 1 minuto, dependendo da carga nos servidores do Render.
 
-[O resultado FINAL pode ser visto aqui](https://food3xplorer.netlify.app/)
+[O resultado FINAL pode ser visto aqui]()

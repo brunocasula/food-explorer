@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">  
-  <img src="./web/src/assets/logo.svg" alt="" width="550" height="99" />
+  <img src="./frontend/src/assets/logo.svg" alt="" width="550" height="99" />
   <h1>food explorer</h1>  
 </div>
 

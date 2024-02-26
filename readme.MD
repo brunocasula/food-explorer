@@ -1,33 +1,55 @@
-<p align="center">
-  <h1 align="center"><a href="">Food Explorer - Rocketseat Explorer :rocket: </a></h1>
-</p>
 
 <div align="center">  
-  <img src="./frontend/src/assets/logo.svg" alt="" width="550" height="99" />
+  <img src="./frontend/src/assets/logo.svg" alt="" />
   <h1>food explorer</h1>  
 </div>
 
-Este é o resultado do desafio final do Explorer, o Food Explorer.
-<br>
-Nele realizei a criação do FrontEnd e do BackEnd completo da aplicação.
+## 🏷️Resumo
+ 
+O <b>foodexplorer</b> é uma aplicação completa para um cardápio digital utilizando HTML, CSS, JavaScript, Node.js e React.js. O projeto envolve a criação de uma interface amigável para a visualização e interação com os pratos de um restaurante fictício, oferecendo uma experiência imersiva desde a seleção até o pagamento do pedido.
 
-___
+#### O projeto consiste no desenvolvimento em duas etapas.
 
-## 💻 Sobre
-O Food Explorer é uma aplicação web de um restaurante. Após se cadastrar na plataforma o usuário estará apto a criar os pedidos e acompanhar o status dele. Há ainda uma customização de perfil, filtragem de favoritos, campo de busca e seção de contato com o restaurante. O carrinho é 100% funcional e o usuário pode escolher entre 2 formas de pagamento (cartão ou Pix). O Administrador terá a capacidade de criar/editar/remover os pratos da forma que desejar. Ele poderá ainda alterar o status dos pedidos, de acordo com a linha de preparo dos mesmos na cozinha. Este status será imediatamente atualizado na tela dos consumidores. O projeto conta com diversos "extras" que adicionei, como a possibilidade de mudança de tema da página, customização do perfil do usuário(avatar, nome e senha), conta ainda com diversos efeitos visuais e o mais importante de tudo: É responsivo para a utilização em diversos tipos de dispositivos!
+<b>back-end</b>
+O back-end e o "motor" que se relaciona com o que está por trás das aplicações desenvolvidas na programação. Ou seja, tudo que dá estrutura e apoio às ações do usuário da máquina.
 
-Este repositório contém os dados do Frontend da minha aplicação em React.js e do BackEnd em Node.js.
+<b>front-end</b>
+O front-end é uma área da programação que se dedica a criar a parte visual e interativa de um site, aplicativo ou software. É o que o usuário vê e usa quando acessa uma plataforma digital.
 
-___
+## 🔗 Link's Uteis
+Layout (Figma)
+[Acesse aqui](https://www.figma.com/community/file/1196874589259687769)
+
+FoodExplorer
+[Acesse aqui](https://foodexplorer-bc.netlify.app/)
+
+## 🗒️ Sobre
+
+O Food Explorer é uma aplicação web de um restaurante.
+
+Após realizar o cadastro você estará apto para visualizar o cardápio digital que contempla três grupos, sendo refeições, sobremesas e bebidas. 
+Você poderá visualizar com detalhes a descrição e os ingredientes de cada item.
+O aplicativo permite incluir os itens de sua escolha no carrinho e concluir o pedido após a finalização do pagamento.
+Existem duas modalidades de pagamentos a primeira sendo PIX e a segunda Crédito.
+
+O usuário admin permite incluir/editar e deletar itens além de acompanhar o histórico de pedidos e realizar sua manutenção.
 
 ## 🎨 Layout
-A página inicial em formato desktop é vista na imagem abaixo:
+O layout final do projeto pode ser visualizado nas imagens abaixo:
+##### Login
+<img src="./frontend/src/assets/public/login.png" alt="" />
 
-![foodexplorer vercel app_](https://user-images.png)
+##### Home
+<img src="./frontend/src/assets/public/home.png" alt="" />
 
-![foodexplorer vercel app_ (1)](https://user-images.png)
+##### Favoritos
+<img src="./frontend/src/assets/public/favorite.png" alt="" />
 
-___
+##### Pedidos
+<img src="./frontend/src/assets/public/history.png" alt="" />
+
+##### Histórico de pedidos
+<img src="./frontend/src/assets/public/order.png" alt="" />
 
 ## 🛠 Tecnologias
 
@@ -51,25 +73,24 @@ As seguintes tecnologias foram empregadas na criação deste projeto:
 - [Swiper](https://swiperjs.com/)
 - [React Router Dom](https://react-icons.github.io/react-icons/)
 
-___
-
-## 🚀 Como utilizar
+## ⚙️ Como utilizar
 
 Clone o projeto para o local desejado em seu computador.
 
 ```bash
 $ git clone https://github.com/brunocasula/food-explorer.git
 ```
-___
 
-#### 🚧 Executando o BackEnd
+---
+
+#### 💻 Executando o BackEnd
 ```bash
 # No BackEnd insira uma porta e um secret no arquivo .env vazio
   AUTH_SECRET=
   PORT=
 
 # Navegue até o diretório do BackEnd
-$ cd food-explorer-backend
+$ cd backend
 
 # Instale as dependências necessárias
 $ npm install
@@ -77,12 +98,13 @@ $ npm install
 # Agora inicie o servidor do BackEnd
 $ npm run dev
 ```
-___
+
+---
 
 #### 💻 Executando o FrontEnd
 ```bash
 # Navegue até o diretório do FrontEnd
-$ cd food-explorer-frontend
+$ cd frontend
 
 # Instale as dependências necessárias
 $ npm install
@@ -98,24 +120,18 @@ $ npm run dev
 #### 🔑 Quer ver como a aplicação funciona vista pelo Admin? Use a conta a seguir:
 
 ```bash
-ADMIN
+[ADMIN]
   e-mail: admin@foodexplorer.com
   senha: 123456
 
-USER
+[USER]
   e-mail: user@foodexplorer.com
   senha: 123456
 ```
-___
 
-Este BackEnd foi hospedado diretamente no Render.
-Já o Frontend foi hospedado diretamente no Netlify.
+---
 
-___
-Obs.: Por estar hospedado em um serviço gratuito, o BackEnd "hiberna" após 15 minutos sem utilização.
-<br>
-Se você está tentando acessar o site e o BackEnd não responde, apenas aguarde, pois ele estará "inicializando" os serviços.
-<br>
-Esta etapa poderá demorar até 1 minuto, dependendo da carga nos servidores do Render.
+Back-end hospedado no Render. ([Render Dashboard](https://dashboard.render.com/))
+Front-end hospedado no Netlify. ([Netlify](https://www.netlify.com/))
 
-[O resultado FINAL pode ser visto aqui]()
+---

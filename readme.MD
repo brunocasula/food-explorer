@@ -42,14 +42,14 @@ O layout final do projeto pode ser visualizado nas imagens abaixo:
 ##### Home
 <img src="./frontend/src/assets/public/home.png" alt="" />
 
-##### Favoritos
+##### Meus favoritos
 <img src="./frontend/src/assets/public/favorite.png" alt="" />
 
-##### Pedidos
-<img src="./frontend/src/assets/public/history.png" alt="" />
+##### Meu pedido
+<img src="./frontend/src/assets/public/order.png" alt="" />
 
 ##### Histórico de pedidos
-<img src="./frontend/src/assets/public/order.png" alt="" />
+<img src="./frontend/src/assets/public/history.png" alt="" />
 
 ## 🛠 Tecnologias
 

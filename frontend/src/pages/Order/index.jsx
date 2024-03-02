@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 import { api } from "../../services/api";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { Loading } from "../../components/Loading";
 
 export function Order() {
 
@@ -19,6 +20,7 @@ export function Order() {
   const [orders, setOrders] = useState([]);
   const [search, setSearch] = useState("");
 
+  const [loading, setLoading] = useState(false);
 
   function mapToStatus(status) {
     let text;
@@ -73,19 +75,26 @@ export function Order() {
       } else {
         toast.error("Não foi possível atualizar o status do pedido!");
       }
+    } finally {
+      location.reload();
     }
-    location.reload();
   }
 
   useEffect(() => {
 
     async function fetchOrders() {
-      const response = await api.get("/orders");
+      setLoading(true);
+      try {
+        const response = await api.get("/orders");
 
-      setOrders(response.data);
+        setOrders(response.data);
+      } finally {
+        setLoading(false);
+      }
     }
 
     fetchOrders();
+
   }, []);
 
   return (
@@ -98,96 +107,101 @@ export function Order() {
       <main>
         <Content>
 
-          {orders.length === 0 ?
-            <div className="data-empty">
-              <h2>Você ainda não possui histórico de pedidos!</h2>
+          {loading ?
+            <div className="loading">
+              <Loading />
             </div>
             :
-            <>
-              <h1>Histórico de pedidos</h1>
-              <section>
+            orders.length === 0 ?
+              <div className="data-empty">
+                <h2>Você ainda não possui histórico de pedidos!</h2>
+              </div>
+              :
+              <>
+                <h1>Histórico de pedidos</h1>
+                <section>
 
-                <table className="table-wide">
-                  <thead>
-                    <tr>
-                      <th>Status</th>
-                      <th>Código</th>
-                      <th>Detalhamento</th>
-                      <th>Data e hora</th>
-                    </tr>
-                  </thead>
+                  <table className="table-wide">
+                    <thead>
+                      <tr>
+                        <th>Status</th>
+                        <th>Código</th>
+                        <th>Detalhamento</th>
+                        <th>Data e hora</th>
+                      </tr>
+                    </thead>
 
-                  <tbody>
-                    {
-                      orders &&
-                      orders.map((order, index) => (
+                    <tbody>
+                      {
+                        orders &&
+                        orders.map((order, index) => (
 
-                        <tr key={String(order.id)}>
+                          <tr key={String(order.id)}>
 
-                          {isAdmin ?
-                            <td>
-                              <select defaultValue={order.status} onChange={event => handleOrderStatus(order, event)}>
-                                <option value="pending">🔴 Pendente</option>
-                                <option value="preparing">🟠 Preparando</option>
-                                <option value="delivered">🟢 Entregue</option>
-                                <option value="canceled">🔴 Cancelado</option>
-                              </select>
-                            </td>
-                            :
-                            <td>{mapToStatus(order.status)}</td>
-                          }
-
-                          <td>{String(order.id).padStart(8, "0")}</td>
-                          <td>
-                            {order.dishes.map(dish => `${dish.quantity} x ${dish.name}, `)}
-                          </td>
-                          <td>{formatDate(order.created_at)}</td>
-                        </tr>
-
-                      ))
-                    }
-                  </tbody>
-
-                </table>
-
-                <section className="section-mobile">
-                  {
-                    orders &&
-                    orders.map((order, index) => (
-
-                      <table key={String(order.id)} className="table-mobile" >
-                        <tbody>
-                          <tr>
-                            <td>{String(order.id).padStart(6, "0")}</td>
-                            {!isAdmin && <td>{mapToStatus(order.status)}</td>}
-                            <td>{formatDate(order.created_at)}</td>
-                          </tr>
-                          <tr>
-                            <td colSpan="3">{order.dishes.map(dish => `${dish.quantity} x ${dish.name}, `)}</td>
-                          </tr>
-
-                          {isAdmin &&
-                            <tr>
-                              <td colSpan={"3"}>
+                            {isAdmin ?
+                              <td>
                                 <select defaultValue={order.status} onChange={event => handleOrderStatus(order, event)}>
-                                  {/* 🟡 */}
                                   <option value="pending">🔴 Pendente</option>
                                   <option value="preparing">🟠 Preparando</option>
                                   <option value="delivered">🟢 Entregue</option>
                                   <option value="canceled">🔴 Cancelado</option>
                                 </select>
                               </td>
+                              :
+                              <td>{mapToStatus(order.status)}</td>
+                            }
+
+                            <td>{String(order.id).padStart(8, "0")}</td>
+                            <td>
+                              {order.dishes.map(dish => `${dish.quantity} x ${dish.name}, `)}
+                            </td>
+                            <td>{formatDate(order.created_at)}</td>
+                          </tr>
+
+                        ))
+                      }
+                    </tbody>
+
+                  </table>
+
+                  <section className="section-mobile">
+                    {
+                      orders &&
+                      orders.map((order, index) => (
+
+                        <table key={String(order.id)} className="table-mobile" >
+                          <tbody>
+                            <tr>
+                              <td>{String(order.id).padStart(6, "0")}</td>
+                              {!isAdmin && <td>{mapToStatus(order.status)}</td>}
+                              <td>{formatDate(order.created_at)}</td>
                             </tr>
-                          }
+                            <tr>
+                              <td colSpan="3">{order.dishes.map(dish => `${dish.quantity} x ${dish.name}, `)}</td>
+                            </tr>
 
-                        </tbody>
-                      </table>
+                            {isAdmin &&
+                              <tr>
+                                <td colSpan={"3"}>
+                                  <select defaultValue={order.status} onChange={event => handleOrderStatus(order, event)}>
+                                    {/* 🟡 */}
+                                    <option value="pending">🔴 Pendente</option>
+                                    <option value="preparing">🟠 Preparando</option>
+                                    <option value="delivered">🟢 Entregue</option>
+                                    <option value="canceled">🔴 Cancelado</option>
+                                  </select>
+                                </td>
+                              </tr>
+                            }
 
-                    ))}
+                          </tbody>
+                        </table>
+
+                      ))}
+                  </section>
+
                 </section>
-
-              </section>
-            </>
+              </>
           }
         </Content>
 

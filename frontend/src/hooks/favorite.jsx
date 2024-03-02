@@ -5,19 +5,18 @@ import { api } from "../services/api";
 const FavoriteContext = createContext();
 
 function FavoriteProvider({ children }) {
-  const [data, setData] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
-  // useEffect(() => {
-  //   fetchFavorites();
-  // }, []);
-
-
   async function fetchFavorites() {
+    setLoading(true);
     try {
       const response = await api.get("/favorites");
       // const data = JSON.parse(response.data);
       const data = response.data;
+      console.log(data);
+      console.log(typeof (data));
       const favorites = data.map((favorite) => favorite.dish_id);
 
       setData(data);
@@ -28,7 +27,10 @@ function FavoriteProvider({ children }) {
       } else {
         toast.error("Não foi possível carregar os favoritos!");
       }
+    } finally {
+      setLoading(false);
     }
+
   };
 
 
@@ -63,8 +65,9 @@ function FavoriteProvider({ children }) {
 
   return (
     <FavoriteContext.Provider value={{
-      data: data,
+      data,
       favorites: favorites,
+      loading,
       fetchFavorites,
       updateFavorite
     }}>

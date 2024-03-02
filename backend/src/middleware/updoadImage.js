@@ -8,9 +8,6 @@ function uploadImage(request, response, next) {
 
   const imageFileName = request.file ? request.file.filename : "";
 
-  console.log('teste', imageFileName);
-  console.log(request.name);
-
   const upload = multer(uploadConfig.MULTER);
 
   try {

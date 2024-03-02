@@ -9,8 +9,6 @@ function ensureAuthenticated(request, response, next) {
     throw new AppError("JWT token não informado!", 401);
   }
 
-  // console.log(`[ensureAuthenticated-cookie] ${authHeader.cookie}`);
-
   const [, token] = authHeader.cookie.split("token=");
 
   try {

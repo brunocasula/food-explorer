@@ -2,31 +2,31 @@ import { createContext, useContext, useState, useEffect } from "react";
 import { api } from "../services/api";
 import { toast } from "react-toastify";
 
-export const AuthContext = createContext({});
+const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
   const [data, setData] = useState({});
 
   async function signIn({ email, password }) {
     try {
-      const response = await api.post("/sessions", { email, password },
+      const response = await api.post("sessions", { email, password },
         { withCredentials: true });
-
       const { user } = response.data;
 
       localStorage.setItem("@foodexplorer:user", JSON.stringify(user));
+
+      // api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
       setData({ user });
 
     } catch (error) {
       if (error.response) {
-        toast.error(error.response.data.message);
+        alert(error.response.data.message);
       } else {
-        toast.error("Não foi possível acessar!");
+        alert("Não foi possível entrar.");
       }
     }
-
-  }
+  };
 
   function signOut() {
     localStorage.removeItem("@foodexplorer:user");
@@ -43,6 +43,7 @@ function AuthProvider({ children }) {
       setData({
         user: JSON.parse(user)
       });
+
     }
   }, []);
 
@@ -55,7 +56,7 @@ function AuthProvider({ children }) {
       {children}
     </AuthContext.Provider>
   )
-};
+}
 
 function useAuth() {
   const context = useContext(AuthContext);

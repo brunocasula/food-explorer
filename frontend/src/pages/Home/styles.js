@@ -21,6 +21,10 @@ export const Content = styled.div`
   padding: 0 2.4rem;    
   margin: 0 auto; 
 
+  .loading {
+    margin: auto;
+  }
+
   @media (min-width: 768px) {
     padding: 0 10.0rem;   
   }

@@ -20,6 +20,7 @@ export function AppRoutes() {
       <Route path="/cart" element={<Cart />} />
       <Route path="/orders" element={<Order />} />
 
+      {/* <Route path="*" exact={true} element={<NotFound />} /> */}
       <Route path="*" exact={true} element={<NotFound />} />
     </Routes>
   )

@@ -22,7 +22,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
 
-  .data-empty{
+  .data-empty, .loading{
     margin: auto;
   }
 

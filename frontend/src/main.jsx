@@ -20,25 +20,25 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <FavoriteProvider>
           <CartProvider>
             <Routes />
-
-            <ToastContainer
-              position="top-right"
-              autoClose={4000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              // theme="colored"
-              theme="dark"
-              // transition:Bounce
-              transition:Flip
-            />
-
           </CartProvider>
         </FavoriteProvider>
+
+        <ToastContainer
+          position="top-right"
+          autoClose={4000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          // theme="colored"
+          theme="dark"
+          // transition:Bounce
+          transition:Flip
+        />
+
       </AuthProvider>
 
     </ThemeProvider>

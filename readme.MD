@@ -6,26 +6,20 @@
 
 ## 🏷️Resumo
  
-O <b>foodexplorer</b> é uma aplicação completa para um cardápio digital utilizando HTML, CSS, JavaScript, Node.js e React.js. O projeto envolve a criação de uma interface amigável para a visualização e interação com os pratos de um restaurante fictício, oferecendo uma experiência imersiva desde a seleção até o pagamento do pedido.
+O <b>foodexplorer</b> é uma aplicação completa para um cardápio digital utilizando HTML, CSS, JavaScript, Node.js e React.js. 
+O projeto envolve a criação de uma interface amigável para a visualização e interação com os pratos de um restaurante fictício, oferecendo uma experiência imersiva desde a seleção até o pagamento do pedido.
 
 #### O projeto consiste no desenvolvimento em duas etapas.
 
 <b>back-end</b>
-O back-end e o "motor" que se relaciona com o que está por trás das aplicações desenvolvidas na programação. Ou seja, tudo que dá estrutura e apoio às ações do usuário da máquina.
+O back-end e o "motor" que se relaciona com o que está por trás das aplicações desenvolvidas na programação. Ou seja, tudo que dá estrutura e apoio às ações do usuário da máquina, a principal tecnologia utilizada para a criação da api foi o Node.js com o framework Express.
 
 <b>front-end</b>
-O front-end é uma área da programação que se dedica a criar a parte visual e interativa de um site, aplicativo ou software. É o que o usuário vê e usa quando acessa uma plataforma digital.
-
-## 🔗 Link's Uteis
-Layout (Figma)
-[Acesse aqui](https://www.figma.com/community/file/1196874589259687769)
-
-FoodExplorer
-[Acesse aqui](https://foodexplorer-bc.netlify.app/)
+O front-end é uma área da programação que se dedica a criar a parte visual e interativa de um site, aplicativo ou software. É o que o usuário vê e usa quando acessa uma plataforma digital, foram utilizados o HTML, CSS JavaScript e React.js.
 
 ## 🗒️ Sobre
 
-O Food Explorer é uma aplicação web de um restaurante.
+O Food Explorer é uma aplicação web de de cardápio virtual de um restaurante.
 
 Após realizar o cadastro você estará apto para visualizar o cardápio digital que contempla três grupos, sendo refeições, sobremesas e bebidas. 
 Você poderá visualizar com detalhes a descrição e os ingredientes de cada item.
@@ -33,6 +27,13 @@ O aplicativo permite incluir os itens de sua escolha no carrinho e concluir o pe
 Existem duas modalidades de pagamentos a primeira sendo PIX e a segunda Crédito.
 
 O usuário admin permite incluir/editar e deletar itens além de acompanhar o histórico de pedidos e realizar sua manutenção.
+
+## 🔗 Link's Uteis
+Layout (Figma)
+[Acesse aqui](https://www.figma.com/community/file/1196874589259687769)
+
+FoodExplorer
+[Acesse aqui](https://foodexplorer-bc.netlify.app/)
 
 ## 🎨 Layout
 O layout final do projeto pode ser visualizado nas imagens abaixo:
@@ -132,6 +133,7 @@ $ npm run dev
 ---
 
 Back-end hospedado no Render. ([Render Dashboard](https://dashboard.render.com/))
+
 Front-end hospedado no Netlify. ([Netlify](https://www.netlify.com/))
 
 ---
